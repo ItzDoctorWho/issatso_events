@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:issatso_events/eventpage.dart';
 
 class EventCard extends StatefulWidget {
-  EventCard({Key? key}) : super(key: key);
+  const EventCard({Key? key}) : super(key: key);
 
   @override
   State<EventCard> createState() => _EventCardState();
@@ -15,7 +15,7 @@ class _EventCardState extends State<EventCard> {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => EventPage()),
+          MaterialPageRoute(builder: (context) => const EventPage()),
         );
       },
       child: Container(
@@ -141,8 +141,8 @@ class _EventCardState extends State<EventCard> {
                     const SizedBox(
                       height: 5,
                     ),
-                    Row(
-                      children: const [
+                    const Row(
+                      children: [
                         SizedBox(
                           width: 5,
                         ),

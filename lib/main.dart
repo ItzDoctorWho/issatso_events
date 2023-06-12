@@ -106,20 +106,20 @@ class _MyHomePageState extends State<MyHomePage> {
             // Upcoming Events
             SizedBox(
               height: 300,
-              child: ListView(scrollDirection: Axis.horizontal, children: [
-                const SizedBox(
+              child: ListView(scrollDirection: Axis.horizontal, children: const [
+                SizedBox(
                   width: 20,
                 ),
                 EventCard(),
-                const SizedBox(
+                SizedBox(
                   width: 20,
                 ),
                 EventCard(),
-                const SizedBox(
+                SizedBox(
                   width: 20,
                 ),
                 EventCard(),
-                const SizedBox(
+                SizedBox(
                   width: 20,
                 ),
               ]),

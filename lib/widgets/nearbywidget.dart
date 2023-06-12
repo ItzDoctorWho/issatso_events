@@ -34,14 +34,14 @@ class _NearbyWidgetState extends State<NearbyWidget> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(12),
+            const Padding(
+              padding: EdgeInsets.all(12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text(
                         '1ST MAY-SAT -2:00 PM',
                         style: TextStyle(
@@ -59,7 +59,7 @@ class _NearbyWidgetState extends State<NearbyWidget> {
                       ),
                     ],
                   ),
-                  const Text(
+                  Text(
                     'The Muses Concert',
                     style: TextStyle(
                       fontSize: 18,
@@ -67,21 +67,21 @@ class _NearbyWidgetState extends State<NearbyWidget> {
                       color: Colors.black,
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 5,
                   ),
-                  const Text(
+                  Text(
                     'Organized by The Muses',
                     style: TextStyle(
                       fontSize: 15,
                       color: Color.fromARGB(255, 117, 117, 120),
                     ),
                   ),
-                  const SizedBox(
+                  SizedBox(
                     height: 10,
                   ),
                   Row(
-                    children: const [
+                    children: [
                       SizedBox(
                         width: 5,
                       ),
@@ -89,7 +89,7 @@ class _NearbyWidgetState extends State<NearbyWidget> {
                         Icons.location_on,
                         color: Color.fromARGB(255, 117, 117, 120),
                       ),
-                      const SizedBox(
+                      SizedBox(
                         width: 5,
                       ),
                       Text(

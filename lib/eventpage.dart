@@ -36,7 +36,7 @@ class _EventPageState extends State<EventPage> {
               height: 50,
               width: 50,
               decoration: BoxDecoration(
-                color: Color.fromARGB(111, 209, 214, 214),
+                color: const Color.fromARGB(111, 209, 214, 214),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: IconButton(
@@ -60,11 +60,11 @@ class _EventPageState extends State<EventPage> {
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text(
                       "The Muses Band Music Concert",
                       style:

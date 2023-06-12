@@ -121,6 +121,5 @@ class ProfileTile extends StatelessWidget {
         ),
       ],
     );
-    ;
   }
 }
