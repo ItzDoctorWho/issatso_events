@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:issatso_events/eventpage.dart';
+import 'package:issatso_events/pages/eventpage.dart';
 
 class EventCard extends StatefulWidget {
   const EventCard({Key? key}) : super(key: key);
