@@ -4,8 +4,7 @@ import 'package:issatso_events/widgets/event_card.dart';
 import 'package:issatso_events/widgets/nearbywidget.dart';
 
 class Home extends StatefulWidget {
-  const Home({super.key, required this.title});
-  final String title;
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
