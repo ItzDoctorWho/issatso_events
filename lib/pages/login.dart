@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
+import 'package:issatso_events/pages/home.dart';
 import 'package:issatso_events/pages/register.dart';
 
 class Login extends StatefulWidget {
@@ -57,7 +58,7 @@ class _LoginState extends State<Login> {
               ),
               TextField(
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.mail_outline),
+                  prefixIcon: const Icon(Icons.mail_outline),
                   labelText: "Email",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -77,10 +78,10 @@ class _LoginState extends State<Login> {
                       });
                     },
                     icon: isVisible == true
-                        ? Icon(Icons.visibility_off)
-                        : Icon(Icons.visibility),
+                        ? const Icon(Icons.visibility_off)
+                        : const Icon(Icons.visibility),
                   ),
-                  prefixIcon: Icon(Icons.lock_outlined),
+                  prefixIcon: const Icon(Icons.lock_outlined),
                   labelText: "Password",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -102,7 +103,7 @@ class _LoginState extends State<Login> {
                         width: 45,
                         height: 25,
                         toggleSize: 15,
-                        activeColor: Color(0xFF00CEC1),
+                        activeColor: const Color(0xFF00CEC1),
                         value: isFlicked,
                         onToggle: (val) {
                           setState(() {
@@ -141,7 +142,12 @@ class _LoginState extends State<Login> {
                   width: MediaQuery.of(context).size.width * 0.75,
                   height: 55,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Home()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF00CEC1),
                       shape: RoundedRectangleBorder(
@@ -150,20 +156,20 @@ class _LoginState extends State<Login> {
                     ),
                     child: Row(
                       children: [
-                        Spacer(),
+                        const Spacer(),
                         const Text(
                           "SIGN IN",
                           style: TextStyle(fontSize: 17),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Container(
                             height: 30,
                             width: 30,
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 145, 219, 214),
+                              color: const Color.fromARGB(255, 145, 219, 214),
                               borderRadius: BorderRadius.circular(300),
                             ),
-                            child: Icon(Icons.arrow_forward)),
+                            child: const Icon(Icons.arrow_forward)),
                       ],
                     ),
                   ),
@@ -193,7 +199,7 @@ class _LoginState extends State<Login> {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFFFFFFF),
+                      backgroundColor: const Color(0xFFFFFFFF),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -204,12 +210,12 @@ class _LoginState extends State<Login> {
                             height: 30,
                             width: 30,
                             child: Image.asset("assets/ggl.png")),
-                        Spacer(),
+                        const Spacer(),
                         const Text(
                           "Login with Google",
                           style: TextStyle(fontSize: 17, color: Colors.black),
                         ),
-                        Spacer(),
+                        const Spacer(),
                       ],
                     ),
                   ),
@@ -237,12 +243,12 @@ class _LoginState extends State<Login> {
                             height: 30,
                             width: 30,
                             child: Image.asset("assets/fb.png")),
-                        Spacer(),
+                        const Spacer(),
                         const Text(
                           "Login with Facebook",
                           style: TextStyle(fontSize: 17, color: Colors.black),
                         ),
-                        Spacer(),
+                        const Spacer(),
                       ],
                     ),
                   ),
