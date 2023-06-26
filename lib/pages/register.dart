@@ -1,51 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:issatso_events/pages/register.dart';
+import 'package:issatso_events/pages/login.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Register extends StatefulWidget {
+  const Register({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Register> createState() => _RegisterState();
 }
 
 bool isFlicked = false;
 bool isVisible = false;
 
-class _LoginState extends State<Login> {
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 25,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 140,
-                    width: 160,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/IE_PSD.png"),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
                 height: 20,
               ),
               const Text(
-                "Sign in",
+                "Sign up",
                 textAlign: TextAlign.start,
                 style: TextStyle(
                   fontSize: 24,
@@ -53,11 +35,23 @@ class _LoginState extends State<Login> {
                 ),
               ),
               const SizedBox(
+                height: 25,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.person_outlined),
+                  labelText: "Fullname",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+              ),
+              const SizedBox(
                 height: 15,
               ),
               TextField(
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.mail_outline),
+                  prefixIcon: const Icon(Icons.mail_outline),
                   labelText: "Email",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -65,7 +59,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 15,
               ),
               TextField(
                 obscureText: isVisible,
@@ -77,10 +71,10 @@ class _LoginState extends State<Login> {
                       });
                     },
                     icon: isVisible == true
-                        ? Icon(Icons.visibility_off)
-                        : Icon(Icons.visibility),
+                        ? const Icon(Icons.visibility_off)
+                        : const Icon(Icons.visibility),
                   ),
-                  prefixIcon: Icon(Icons.lock_outlined),
+                  prefixIcon: const Icon(Icons.lock_outlined),
                   labelText: "Password",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -90,47 +84,32 @@ class _LoginState extends State<Login> {
                     FocusScope.of(context).requestFocus(FocusNode()),
               ),
               const SizedBox(
-                height: 5,
+                height: 15,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      FlutterSwitch(
-                        width: 45,
-                        height: 25,
-                        toggleSize: 15,
-                        activeColor: Color(0xFF00CEC1),
-                        value: isFlicked,
-                        onToggle: (val) {
-                          setState(() {
-                            isFlicked = !isFlicked;
-                          });
-                        },
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      const Text(
-                        "Remember me",
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w500),
-                      ),
-                    ],
+              TextField(
+                obscureText: isVisible,
+                decoration: InputDecoration(
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      setState(() {
+                        isVisible = !isVisible;
+                      });
+                    },
+                    icon: isVisible == true
+                        ? const Icon(Icons.visibility_off)
+                        : const Icon(Icons.visibility),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "Forgot Password?",
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500),
-                    ),
+                  prefixIcon: const Icon(Icons.lock_outlined),
+                  labelText: "Confirm Password",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                ],
+                ),
+                onTapOutside: (event) =>
+                    FocusScope.of(context).requestFocus(FocusNode()),
+              ),
+              const SizedBox(
+                height: 5,
               ),
               const SizedBox(
                 height: 15,
@@ -150,20 +129,20 @@ class _LoginState extends State<Login> {
                     ),
                     child: Row(
                       children: [
-                        Spacer(),
+                        const Spacer(),
                         const Text(
-                          "SIGN IN",
+                          "SIGN UP",
                           style: TextStyle(fontSize: 17),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Container(
                             height: 30,
                             width: 30,
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 145, 219, 214),
+                              color: const Color.fromARGB(255, 145, 219, 214),
                               borderRadius: BorderRadius.circular(300),
                             ),
-                            child: Icon(Icons.arrow_forward)),
+                            child: const Icon(Icons.arrow_forward)),
                       ],
                     ),
                   ),
@@ -193,7 +172,7 @@ class _LoginState extends State<Login> {
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFFFFFFF),
+                      backgroundColor: const Color(0xFFFFFFFF),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
@@ -204,12 +183,12 @@ class _LoginState extends State<Login> {
                             height: 30,
                             width: 30,
                             child: Image.asset("assets/ggl.png")),
-                        Spacer(),
+                        const Spacer(),
                         const Text(
-                          "Login with Google",
+                          "Sign up with Google",
                           style: TextStyle(fontSize: 17, color: Colors.black),
                         ),
-                        Spacer(),
+                        const Spacer(),
                       ],
                     ),
                   ),
@@ -237,12 +216,12 @@ class _LoginState extends State<Login> {
                             height: 30,
                             width: 30,
                             child: Image.asset("assets/fb.png")),
-                        Spacer(),
+                        const Spacer(),
                         const Text(
-                          "Login with Facebook",
+                          "Sign up with Facebook",
                           style: TextStyle(fontSize: 17, color: Colors.black),
                         ),
-                        Spacer(),
+                        const Spacer(),
                       ],
                     ),
                   ),
@@ -265,12 +244,11 @@ class _LoginState extends State<Login> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const Register()),
+                        MaterialPageRoute(builder: (context) => const Login()),
                       );
                     },
                     child: const Text(
-                      "Sign Up",
+                      "Sign In",
                       style: TextStyle(
                           fontSize: 15,
                           color: Color(0xFF00CEC1),

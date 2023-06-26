@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:issatso_events/pages/home.dart';
 import 'package:issatso_events/pages/login.dart';
 
 void main() {
