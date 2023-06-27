@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:issatso_events/widgets/bottomappbar.dart';
+import 'package:issatso_events/widgets/drawer.dart';
 import 'package:issatso_events/widgets/event_card.dart';
 import 'package:issatso_events/widgets/nearbywidget.dart';
 
@@ -15,6 +16,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 241, 241, 241),
+      drawer: const SideDrawer(),
       appBar: AppBar(
         toolbarHeight: 90,
         backgroundColor: const Color(0xff00CEC1),
@@ -25,17 +27,11 @@ class _HomeState extends State<Home> {
           height: 100,
           width: 100,
         ),
-        leading: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: IconButton(
-            icon: const Icon(
-              Icons.menu,
-              size: 30,
-            ),
-            onPressed: () {},
-          ),
-        ),
         elevation: 0,
+        iconTheme: const IconThemeData(
+          size: 30,
+          color: Colors.white,
+        ),
         actions: [
           IconButton(
             icon: const Icon(
